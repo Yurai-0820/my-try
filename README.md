@@ -2,14 +2,14 @@
 
 ## users テーブル
 
-| Column             | Type     | Options                  |
-| ------------------ | -------- | ------------------------ |
-| nickname           | string   | null: false              |
-| email              | string   | null: false unique: true |
-| encrypted_password | string   | null: false              |
-| age                | integer  | null: false              |
-| purpose_body_id    | integer  | null: false              |
-| how_long_time_id   | string   | null: false              |
+| Column                    | Type     | Options                  |
+| ------------------------- | -------- | ------------------------ |
+| nickname                  | string   | null: false              |
+| email                     | string   | null: false unique: true |
+| encrypted_password        | string   | null: false              |
+| age                       | integer  | null: false              |
+| purpose_body_id           | integer  | null: false              |
+| day_trining_time_id       | string   | null: false              |
 
 
 ### Association

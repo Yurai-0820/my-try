@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-03-06T07:53:08.862Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.54.1 Chrome/87.0.4280.141 Electron/11.3.0 Safari/537.36" version="14.2.4" etag="ylrMZ7tQHquYIm42Jh7w" type="embed">
+<mxfile host="65bd71144e" modified="2021-03-06T08:06:19.449Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.54.1 Chrome/87.0.4280.141 Electron/11.3.0 Safari/537.36" version="14.2.4" etag="r2IxuImpE6nOsDI4tMWN" type="embed">
     <diagram id="e7m-AtX9DYoO8ImvSb8q" name="ページ1">
         <mxGraphModel dx="1769" dy="294" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -96,7 +96,7 @@
                 <mxCell id="29" value="title (string型,NOT,NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="27">
                     <mxGeometry y="56" width="220" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="32" value="description (string型,NOT,NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="27">
+                <mxCell id="32" value="description (text型,NOT,NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="27">
                     <mxGeometry y="86" width="220" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="user (references型)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="27">
