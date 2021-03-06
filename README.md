@@ -1,24 +1,68 @@
-# README
+# My-tryのER図
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column                    | Type     | Options                  |
+| ------------------------- | -------- | ------------------------ |
+| nickname                  | string   | null: false              |
+| email                     | string   | null: false unique: true |
+| encrypted_password        | string   | null: false              |
+| age                       | integer  | null: false              |
+| purpose_body_id           | integer  | null: false              |
+| day_trining_time_id       | string   | null: false              |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :trainings
+- has_many :maxes
+- has_many :manners
 
-* Database creation
 
-* Database initialization
+## trainings テーブル
 
-* How to run the test suite
+| Column             | Type       | Options                  |
+| ------------------ | ---------- | ------------------------ |
+| muscle_part_id     | integer    | null: false              |
+| training_name      | string     | null: false unique: true |
+| target muscle      | string     | null: false              |
+| video_url          | string     | null: false              |
+| user               | references | foreign_key: true        |
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :user
+- has_one :max
+
+
+
+## maxes テーブル
+
+| Column             | Type       | Options                  |
+| ------------------ | ---------- | ------------------------ |
+| max_weight         | integer    | null: false              |
+| user               | references | foreign_key: true        |
+| training           | references | foreign_key: true        |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :training
+
+
+
+## manners テーブル
+
+| Column             | Type       | Options                  |
+| ------------------ | ---------- | ------------------------ |
+| genre_id           | integer    | null: false              |
+| title              | string     | null: false              |
+| description        | text       | null: false              |
+| user               | references | foreign_key: true        |
+
+
+### Association
+
+- belongs_to :user
