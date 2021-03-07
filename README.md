@@ -9,7 +9,7 @@
 | encrypted_password        | string   | null: false              |
 | age                       | integer  | null: false              |
 | purpose_body_id           | integer  | null: false              |
-| day_trining_time_id       | string   | null: false              |
+| day_training_time_id       | string   | null: false              |
 
 
 ### Association
