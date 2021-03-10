@@ -21,13 +21,14 @@
 
 ## trainings テーブル
 
-| Column             | Type       | Options                  |
-| ------------------ | ---------- | ------------------------ |
-| muscle_part_id     | integer    | null: false              |
-| training_name      | string     | null: false unique: true |
-| target muscle      | string     | null: false              |
-| video_url          | string     | null: false              |
-| user               | references | foreign_key: true        |
+| Column               | Type       | Options                  |
+| -------------------- | ---------- | ------------------------ |
+| muscle_part_id       | integer    | null: false              |
+| training_name        | string     | null: false unique: true |
+| target_muscle        | string     | null: false              |
+| training_description | text       | null: false              |
+| video_url            | string     | null: false              |
+| user                 | references | foreign_key: true        |
 
 
 ### Association

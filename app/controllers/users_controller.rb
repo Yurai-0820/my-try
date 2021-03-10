@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
-  
+
 def index
   @users = User.order('created_at DESC')
+  @trainings = Training.all
 end
 
 def new
@@ -23,6 +24,7 @@ private
 def user_params
   params.require(:user).permit(:nickname,:email,:password,:age,:purpose_body_id,:day_training_time_id)
 end
+
 
 
 end
