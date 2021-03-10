@@ -1,0 +1,45 @@
+<div class="items-sell-contents">
+<%= render "shared/second-header"%>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">マナー情報を入力</h2>
+    <%= form_with model: @manner, local: true do |f| %>
+
+    
+    <%= render 'shared/error_messages', model: f.object %>
+    
+
+    <div class="weight-bold-text">
+          種類の選択
+          <span class="indispensable">必須</span>
+        </div>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+
+    
+    <div class="new-items">
+      <div class="weight-bold-text">
+        題名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"例 心得その１", maxlength:"40" %>
+    
+<div class="items-explain">
+        <div class="weight-bold-text">
+          説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"マナーに気をつけよう" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+    
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <%= render "shared/second-footer"%>
+</div>
+

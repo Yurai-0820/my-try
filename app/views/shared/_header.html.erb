@@ -11,8 +11,8 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to '「ジムの心得・マナー集」', "#", class: "category-list" %></li>
-      <li><%= link_to '「トレーニング一覧」', "#", class: "brand-list" %></li>
+      <li><%= link_to '「ジムの心得・マナー集」', manners_path, class: "category-list" %></li>
+      <li><%= link_to '「トレーニング一覧」', trainings_path, class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>

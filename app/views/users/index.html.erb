@@ -1,7 +1,33 @@
 <%= render "shared/header" %>
 
+ <ul>
+      <% if user_signed_in? && current_user.id == 1 %>
 
-<h1>トップページ</h1>
+          <li><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></li>
 
+        
+         <li><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></li>
+
+      <% else %>
+       
+
+      <% end %>
+    </ul>
+<h1 class='item-lists'>本日のトレーニングメニュー</h1>
+
+    <% @trainings.each do |training| %>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
 
 <%= render "shared/footer" %>
