@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.manner-contents {
+  width: 100vw;
+
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: image-url('girl-in-the-gym-1391368_1920.jpg');
+  background-size: cover;
+}
+
+.manner-main {
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 10vw;
+}
+
+.trainning-form {
+}
+
+.form-text {
+  color: yellow;
+}
+
+.indispensable {
+  background-color: darkgreen;
+}
+
+.info-haedline {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+}
+
+.form-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.register-btn {
+  width: 100%;
+  background: blueviolet;
+  border: 1px solid white;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}

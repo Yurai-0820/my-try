@@ -1,1 +1,44 @@
-<h1 class='item-lists'>マナー・心得一覧</h1>
+<div class='manner-contents'>
+  <div class='manner-main'>
+    <%= form_with model: @manner, url:  "#", id: 'charge-form', class: 'transaction-form-wrap', local: true do |f| %>  
+      <%# マナー一覧表示 %>
+      <div class='trainning-form'>
+        <h1 class='info-haedline'>
+          my training life style
+        </h1>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">種目</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :genre_id, class:"input-default", id:"#", placeholder:"ベンチプレス", maxlength:"#" %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">種目</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre"}) %>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">タイトル</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :title, class:"input-default", id:"#", placeholder:"入館の際は、体温を測るべし"%>
+        </div>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text">描写</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :description, class:"input-default", id:"#", placeholder:"hogehogehogehoge"%>
+        </div>
+      </div>
+      <%# マナー一覧表示 %>
+      <div class='form-btn'>
+        <%= f.submit "登録" ,class:"register-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
