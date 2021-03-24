@@ -1,1 +1,38 @@
 <h1 class='item-lists'>マナー・心得一覧</h1>
+
+
+<h1> マナー </h1>
+     <% @manners.each do |manner| %>
+   <% if manner.genre_id == 2%>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to manner_path(manner.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= manner.title %>
+          </h3>
+            <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
+
+      <h1> 心得 </h1>
+     <% @manners.each do |manner| %>
+   <% if manner.genre_id == 3%>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to manner_path(manner.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= manner.title %>
+          </h3>
+            <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
