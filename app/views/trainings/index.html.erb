@@ -1,1 +1,115 @@
 <h1 class='item-lists'>トレーニング一覧</h1>
+
+<h1> 胸 </h1>
+<% def %>
+<% training.muscle_part_id = 2 %>
+<%= training.muscle_part_id.name %>
+ <% end %>
+     <% @trainings.each do |training| %>
+   <% if training.muscle_part_id == 2%>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+            <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
+
+
+<h1> 背中 </h1>
+     <% @trainings.each do |training| %>
+   <% if training.muscle_part_id == 3%>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+            <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
+
+
+<h1> 肩 </h1>
+     <% @trainings.each do |training| %>
+   <% if training.muscle_part_id == 4%>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+            <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
+
+<h1> 腕 </h1>
+     <% @trainings.each do |training| %>
+   <% if training.muscle_part_id == 5%>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+            <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
+
+<h1> 脚 </h1>
+     <% @trainings.each do |training| %>
+   <% if training.muscle_part_id == 6%>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+            <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
+
+<h1> 腹 </h1>
+     <% @trainings.each do |training| %>
+   <% if training.muscle_part_id == 7%>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+            <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
+      <% end %>
