@@ -1,10 +1,6 @@
 <h1 class='item-lists'>トレーニング一覧</h1>
 
 <h1> 胸 </h1>
-<% def %>
-<% training.muscle_part_id = 2 %>
-<%= training.muscle_part_id.name %>
- <% end %>
      <% @trainings.each do |training| %>
    <% if training.muscle_part_id == 2%>
     <ul class='item-lists'>
