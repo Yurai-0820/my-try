@@ -5,6 +5,7 @@ class MaxesController < ApplicationController
 
     def index
       @max = AddMax.new
+      @max = Max.find_by(training: params[:training])
     end
 
     

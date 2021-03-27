@@ -24,26 +24,25 @@
             <%= training.training_name %>
           </h3>
 
-      
             <% end %>
         </div>
       </li>
       </ul>
       
- <%= form_with model: @max, url:  training_maxes_path,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+ <%#= form_with model: @max, url:  training_maxes_path,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
 
-     <div class="form-group">
+     <%# <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">重量</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :max_weight, class:"input-default", id:"max_weight", placeholder:"例）80", maxlength:"8" %>
+        <%= f.text_field :max_weight, class:"input-default", id:"max_weight", placeholder:"例）80", maxlength:"8" %
       </div>
-<%# /Maxの入力 %>
+<%# /Maxの入力 %
         <div class='buy-btn'>
-      <%= f.submit "登録" ,class:"buy-red-btn" %>
+      <%= f.submit "登録" ,class:"buy-red-btn" %
     </div>
-    <% end %>
+    <% end %> 
 
       <% end %>
 

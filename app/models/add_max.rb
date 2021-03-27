@@ -5,7 +5,7 @@ class AddMax
   with_options presence: true do
     validates :max_weight
     validates :rep
-    validates :item_id
+    validates :training_id
     validates :user_id
   end
 
