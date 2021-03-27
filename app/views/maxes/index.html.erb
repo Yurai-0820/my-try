@@ -1,36 +1,31 @@
 <%= render "shared/header" %>
 
- <ul>
-      <% if user_signed_in? && current_user.id == 1 %>
-
-          <li><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></li>
-
-        
-         <li><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></li>
-
-      <% else %>
-       
-
-      <% end %>
-    </ul>
 <h1 class='item-lists'>本日のトレーニングメニュー</h1>
 
    
       
- <%#= form_with model: @max, url:  training_maxes_path,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+ <%= form_with model: @max, url:  training_maxes_path,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
 
-     <%# <div class="form-group">
+     <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">重量</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :max_weight, class:"input-default", id:"max_weight", placeholder:"例）80", maxlength:"8" %
+        <%= f.text_field :max_weight, class:"input-default", id:"max_weight", placeholder:"例）80", maxlength:"8" %>kg
       </div>
-<%# /Maxの入力 %
+
+     <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">回数</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :rep, class:"input-default", id:"rep", placeholder:"例）10", maxlength:"8" %>回
+      </div>
+
         <div class='buy-btn'>
-      <%= f.submit "登録" ,class:"buy-red-btn" %
+      <%= f.submit "登録" ,class:"buy-red-btn" %>
     </div>
-    <% end %> 
+    <% end  %>
 
     
 
