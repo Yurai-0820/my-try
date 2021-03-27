@@ -5,6 +5,7 @@ class TrainingsController < ApplicationController
 
   def index
     @trainings = Training.order('created_at DESC')
+    @trainings = Training.all
   end
 
   def new
