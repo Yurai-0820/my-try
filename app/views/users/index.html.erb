@@ -23,9 +23,19 @@
           <h3 class='item-name'>
             <%= training.training_name %>
           </h3>
+             
+            <% end %>
+                <%= link_to training_maxes_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "Max登録画面に進む" %>
+          </h3>
+             
             <% end %>
             
+      <%# <%= link_to "Max登録画面に進む", training_maxes_path(@training.id) ,class:"item-red-btn"%> 
 
+       
         </div>
       </li>
       </ul>

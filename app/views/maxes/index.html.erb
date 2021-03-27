@@ -15,19 +15,7 @@
     </ul>
 <h1 class='item-lists'>本日のトレーニングメニュー</h1>
 
-    <% @trainings.each do |training| %>
-    <ul class='item-lists'>
-            <li class='list'>
-            <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= training.training_name %>
-          </h3>
-
-            <% end %>
-        </div>
-      </li>
-      </ul>
+   
       
  <%#= form_with model: @max, url:  training_maxes_path,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
 
@@ -44,7 +32,7 @@
     </div>
     <% end %> 
 
-      <% end %>
+    
 
   
 
