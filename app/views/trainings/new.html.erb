@@ -3,11 +3,9 @@
   <div class="items-sell-main">
     <h2 class="items-sell-title">トレーニング情報を入力</h2>
     <%= form_with model: @training, local: true do |f| %>
-
     
-    <%= render 'shared/error_messages', model: f.object %>
-    
- <div class="weight-bold-text">
+  <%= render 'shared/error_messages', model: f.object %>
+    <div class="weight-bold-text">
           部位の選択
           <span class="indispensable">必須</span>
         </div>
@@ -26,9 +24,9 @@
         ターゲットの筋肉名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :target_muscle, class:"items-text", id:"item-name", placeholder:"例 大胸筋（必須）", maxlength:"40" %>
+    <%= f.text_area :target_muscle, class:"items-text", id:"item-name", placeholder:"例 大胸筋（必須）", maxlength:"40" %>
     
-<div class="items-explain">
+      <div class="items-explain">
         <div class="weight-bold-text">
           トレーニングの説明
           <span class="indispensable">必須</span>
@@ -38,22 +36,18 @@
 
     <div class="new-items">
       <div class="weight-bold-text">
-        YoutubeのURL　埋め込みコードのURLをコピーして貼り付け
+        YoutubeのURL 埋め込みコードのURLをコピーして貼り付け
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :video_url, class:"items-text", id:"item-name", placeholder:"URL（必須）" %>
-
-
-    
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "登録する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-    </div>
-    <%# /下部ボタン %>
+      <%# 下部ボタン %>
+        <div class="sell-btn-contents">
+          <%= f.submit "登録する" ,class:"sell-btn" %>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
+      <%# /下部ボタン %>
   </div>
   <% end %>
 
   <%= render "shared/second-footer"%>
 </div>
-
