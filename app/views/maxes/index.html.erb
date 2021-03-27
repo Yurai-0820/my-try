@@ -1,0 +1,52 @@
+<%= render "shared/header" %>
+
+ <ul>
+      <% if user_signed_in? && current_user.id == 1 %>
+
+          <li><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></li>
+
+        
+         <li><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></li>
+
+      <% else %>
+       
+
+      <% end %>
+    </ul>
+<h1 class='item-lists'>本日のトレーニングメニュー</h1>
+
+    <% @trainings.each do |training| %>
+    <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+
+      
+            <% end %>
+        </div>
+      </li>
+      </ul>
+      
+ <%= form_with model: @max, url:  training_maxes_path,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+
+     <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">重量</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :max_weight, class:"input-default", id:"max_weight", placeholder:"例）80", maxlength:"8" %>
+      </div>
+<%# /Maxの入力 %>
+        <div class='buy-btn'>
+      <%= f.submit "登録" ,class:"buy-red-btn" %>
+    </div>
+    <% end %>
+
+      <% end %>
+
+  
+
+<%= render "shared/footer" %>
