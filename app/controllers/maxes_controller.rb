@@ -5,7 +5,6 @@ class MaxesController < ApplicationController
 
     def index
       @max = AddMax.new
-
     end
 
     
