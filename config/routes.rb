@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :manners
   resources :trainings do
-  resources :maxes, only:[:index, :create]
+  resources :maxes 
+
 end
 end
