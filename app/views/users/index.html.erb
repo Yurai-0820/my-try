@@ -15,7 +15,12 @@
     </ul>
 <h1 class='item-lists'>本日のトレーニングメニュー</h1>
 
+    
+
     <% @trainings.each do |training| %>
+
+      <% if training.max.present? %> 
+
     <ul class='item-lists'>
             <li class='list'>
             <%= link_to training_path(training.id) do %>
@@ -25,20 +30,51 @@
           </h3>
              
             <% end %>
-                <%= link_to training_maxes_path(training.id) do %>
+            
+ <% @limits.each do |limit| %>
+ 
+
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= limit.max_weight %>
+          </h3>
+
+ <% end %>
+
+      <%# <%= link_to "Max登録画面に進む", training_maxes_path(@training.id) ,class:"item-red-btn"%> 
+        </div>
+      </li>
+      </ul>
+      <% else %>
+    
+
+
+
+       <ul class='item-lists'>
+            <li class='list'>
+            <%= link_to training_path(training.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= training.training_name %>
+          </h3>
+             
+            <% end %>
+                <%= link_to new_training_max_path(training.id) do %>
         <div class='item-info'>
           <h3 class='item-name'>
             <%= "Max登録画面に進む" %>
           </h3>
              
             <% end %>
-            
-      <%# <%= link_to "Max登録画面に進む", training_maxes_path(@training.id) ,class:"item-red-btn"%> 
 
-       
+
+      <%# <%= link_to "Max登録画面に進む", training_maxes_path(@training.id) ,class:"item-red-btn"%> 
         </div>
       </li>
       </ul>
       <% end %>
+      <% end %>
+      
+
 
 <%= render "shared/footer" %>

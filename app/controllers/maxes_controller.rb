@@ -4,6 +4,10 @@ class MaxesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
 
     def index
+      @limits = Limit.all
+    end
+
+    def new
       @max = AddMax.new
     end
 
@@ -13,16 +17,23 @@ class MaxesController < ApplicationController
       @max = AddMax.new(max_params)
       if @max.valid?
         @max.save
-        redirect_to root_path
+        redirect_to training_maxes_path
       else
         render 'index'
       end
-    
-      end
-    
-    
-    
 
+    def edit
+
+    end
+
+    def update
+    end
+
+    def show
+    end
+
+
+    end
     
     private
     
