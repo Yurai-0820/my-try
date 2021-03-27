@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'maxes#index'
+  root to: 'users#index'
   resources :users
   resources :manners
   resources :trainings do

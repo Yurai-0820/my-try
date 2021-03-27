@@ -9,7 +9,15 @@ class MaxesController < ApplicationController
 
     
     def create
+
       @max = AddMax.new(max_params)
+      if @max.valid?
+        @max.save
+        redirect_to root_path
+      else
+        render 'index'
+      end
+    
       end
     
     
@@ -18,8 +26,8 @@ class MaxesController < ApplicationController
     
     private
     
-    def maxes_params
-      params.require(:max).permit(:max_weight,:rep).merge(
+    def max_params
+      params.require(:add_max).permit(:max_weight, :rep).merge(
         user_id: current_user.id, training_id: params[:training_id]
       )
     end
