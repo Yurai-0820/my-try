@@ -1,5 +1,12 @@
-
- <p>
-  <%= link_to "詳細", edit_training_path(@maxes.id), method: :get  %>
-</p>
+<div class="contents row">
+  <% @maxes.each do |max| %>
+    <div>
+        <ul>
+          <li>
+            <%= link_to '編集', edit_training_max_path(@training, max), method: :get %>
+          </li>
+        </ul>
+    </div>
+  <% end %>
+</div>
       

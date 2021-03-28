@@ -3,8 +3,7 @@
 <h1 class='item-lists'>本日のトレーニングメニュー</h1>
 
       
- <%= form_with model: @max, url: training_max_path,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
-
+ <%= form_with (model: @max, url:  training_maxes_path,id: 'charge-form', class: 'transaction-form-wrap',local: true) do |f| %>
      <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">重量</label>

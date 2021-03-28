@@ -5,7 +5,8 @@ class MaxesController < ApplicationController
 
     def index
       @max = AddMax.new
-      @maxes = Max.find_by(params[:id])
+      @trainings = Training.all
+      @maxes = Max.all
     end
 
     def new
@@ -24,13 +25,18 @@ class MaxesController < ApplicationController
       end
 
     def edit
-      @max = Max
+      @training = Training.find(params[:id])
+      @max = Max.find(params[:id])
     end
 
     def update
+      @max = AddMax.find(params[:id])
+      #max = Max.find(params[:id])
+      @max.update(max_params)
     end
 
     def show
+      @maxes = Max.find_by(params[:id])
     end
 
 
