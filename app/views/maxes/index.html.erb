@@ -1,9 +1,5 @@
- <% @limits.each do |limit| %>
- 
-  <%= link_to edit_training_path(limit.max_id) do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= limit.max_weight %>
-          </h3>
-          <% end %>
- <% end %>
+
+ <p>
+  <%= link_to "詳細", edit_training_path(@maxes.id), method: :get  %>
+</p>
+      

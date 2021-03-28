@@ -1,10 +1,11 @@
 class MaxesController < ApplicationController
 
-  before_action :maxes, only: [:index, :create]
+  before_action :maxes, only: [:index, :create, :edit, :update]
   before_action :authenticate_user!, only: [:index, :create]
 
     def index
-      @limits = Limit.all
+      @max = AddMax.new
+      @maxes = Max.find_by(params[:id])
     end
 
     def new
@@ -23,7 +24,7 @@ class MaxesController < ApplicationController
       end
 
     def edit
-
+      @max = Max
     end
 
     def update
