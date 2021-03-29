@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+
+<h1 class='item-lists'>本日のトレーニングメニュー</h1>
+
+      
+ <%= form_with model: @limit, url: limit_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+ 
+<%# <%= form_with(model: @limit, local: true) do |f| %> 
+
+     <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">重量</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :max_weight, class:"input-default", id:"max_weight", placeholder:"例）80", maxlength:"8" %>kg
+      </div>
+
+     <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">回数</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :rep, class:"input-default", id:"rep", placeholder:"例）10", maxlength:"8" %>回
+      </div>
+
+        <div class='buy-btn'>
+      <%= f.submit "更新する" ,class:"buy-red-btn" %>
+    </div>
+    <% end  %>
+
+    
+
+  
+
+<%= render "shared/footer" %>
