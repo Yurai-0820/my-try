@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 def index
   @users = User.order('created_at DESC')
   @trainings = Training.all
-  @limits = Limit.order(updated_at: :desc).limit(1)
+  @maxes = Max.all
+  @limits = Limit.all
+  @limit = Limit.new
 end
 
 def new
