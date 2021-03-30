@@ -2,7 +2,6 @@ class LimitsController < ApplicationController
   before_action :limits, only: [:edit, :update]
 
   def create
-    limit.create(limit_params)
   end
 
   def edit
@@ -10,8 +9,8 @@ class LimitsController < ApplicationController
   end
 
   def update
-    limit = Limit.find(params[:id])
-    if limit.update(limit_params)
+    @limit = Limit.find(params[:id])
+    if @limit.update(limit_params)
       redirect_to root_path
     else
       render :edit
@@ -26,9 +25,7 @@ def limits
 end
 
 def limit_params
-  params.require(:limit).permit(:max_weight, :rep).merge(
-    max_id: params[:max_id]
-  )
+  params.require(:limit).permit(:max_weight, :rep)
 end
 
 
