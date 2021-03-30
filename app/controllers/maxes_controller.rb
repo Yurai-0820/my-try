@@ -19,7 +19,7 @@ class MaxesController < ApplicationController
       @max = AddMax.new(max_params)
       if @max.valid?
         @max.save
-        redirect_to training_maxes_path
+        redirect_to root_path
       else
         render 'index'
       end

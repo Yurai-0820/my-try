@@ -31,6 +31,23 @@
              
             <% end %>
             
+            <%# @limits.each do |limit| %>
+            <% @maxes.each do |max| %>
+      <% if max.training.id == training.id %>
+      <% @limit.max_id = max.id %>
+
+     <%= link_to edit_limit_path(max.id) do %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+
+            <%= "今日のトレーニングを登録する" %>
+          </h3>
+             
+            <%# end %>
+            <% end %>
+            <% end %>
+            <% end %>
+
  <%# <% @limits.each do |limit| %>
  
 
