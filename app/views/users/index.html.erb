@@ -15,21 +15,33 @@
     </ul>
 <h1 class='item-lists'>本日のトレーニングメニュー</h1>
 
-    
+    本日の部位は
 
     <% @trainings.each do |training| %>
 
       <% if training.max.present? %> 
+      
+<%# x = 2
+今日のトレーニングが終了したら
+x ++ 
+7の次が2 %>
+       <% if training.muscle_part_id == 2 %>
+       <%# muscle_part_id ++ %>
+          
 
     <ul class='item-lists'>
             <li class='list'>
             <%= link_to training_path(training.id) do %>
         <div class='item-info'>
-          <h3 class='item-name'>
+          <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
-             
             <% end %>
+            <% end %>
+
+        </div>
+      </li>
+      </ul>
 
 
 
