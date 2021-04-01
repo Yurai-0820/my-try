@@ -5,6 +5,7 @@ def index
   @users = User.order('created_at DESC')
   @trainings = Training.all
   @maxes = Max.all
+  @max = Max.new
   @limits = Limit.all
   @limit = Limit.new
 end

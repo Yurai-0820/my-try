@@ -30,9 +30,52 @@
           </h3>
              
             <% end %>
-            
-            <%# @limits.each do |limit| %>
+
+
+
+
+
+
+ <% @limits.each do |limit| %>
+
+
+
+           <%# if max.training.id == limit.id %>
+             <%# limit.id = max.training.id %>
+
+  <% if training.max.id == limit.id %>
+
+      <%# limit.id = limit.max_id %>
+
+
+<%#= max.id %>
+<ul>
+<p>
+今の君のMAXは<%= (limit.max_weight * limit.rep / 40 + limit.max_weight)  %>kg
+</p>
+<p>
+セットメニュー
+</p>
+<p>
+<%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85 %>kg  8回  メインセット
+</p> 
+<p>
+<%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75 %>kg  10回
+</p>
+<p>
+<%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65 %>kg  12回
+</p>
+</ul>
+
+
+           <% end %>
+           <% end %>
+
+
             <% @maxes.each do |max| %>
+
+
+
       <% if max.training.id == training.id %>
       <% @limit.max_id = max.id %>
 
@@ -40,10 +83,11 @@
         <div class='item-info'>
           <h3 class='item-name'>
 
-            <%= "今日のトレーニングを登録する" %>
+            <%= "今日のメインセットを登録する" %>
           </h3>
              
-            <%# end %>
+        
+
             <% end %>
             <% end %>
             <% end %>
