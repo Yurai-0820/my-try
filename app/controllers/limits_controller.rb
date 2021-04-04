@@ -1,8 +1,7 @@
 class LimitsController < ApplicationController
-  before_action :limits, only: [:edit, :update]
+  before_action :limits, only: %i[edit update]
 
-  def create
-  end
+  def create; end
 
   def edit
     @limit = Limit.find(params[:id])
@@ -17,16 +16,13 @@ class LimitsController < ApplicationController
     end
   end
 
+  private
 
-private
+  def limits
+    limit = Limit.find(params[:id])
+  end
 
-def limits
-  limit = Limit.find(params[:id])
-end
-
-def limit_params
-  params.require(:limit).permit(:max_weight, :rep)
-end
-
-
+  def limit_params
+    params.require(:limit).permit(:max_weight, :rep)
+  end
 end

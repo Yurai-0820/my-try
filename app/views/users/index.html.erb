@@ -4,7 +4,6 @@
       <% if user_signed_in? && current_user.id == 1 %>
 
           <li><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></li>
-
         
          <li><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></li>
 
@@ -13,19 +12,24 @@
 
       <% end %>
     </ul>
-<h1 class='item-lists'>本日のトレーニングメニュー</h1>
+    <h1 class='item-lists'>本日のトレーニングメニュー</h1>
 
     本日の部位は
+    
+  
+
 
     <% @trainings.each do |training| %>
 
       <% if training.max.present? %> 
       
-<%# x = 2
-今日のトレーニングが終了したら
-x ++ 
-7の次が2 %>
-       <% if training.muscle_part_id == 2 %>
+
+  <meta charset="UTF-8">
+  <script src="/js/training.js" defer></script>
+  <div class="training", id="trainings-main">
+
+       <div id="muscle_info" data-json="<% if training.muscle_part_id == 2 %>"></div>
+      
        <%# muscle_part_id ++ %>
           
 
@@ -36,31 +40,19 @@ x ++
           <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
+            
             <% end %>
-            <% end %>
+          
 
         </div>
       </li>
       </ul>
 
-
-
-
-
-
- <% @limits.each do |limit| %>
-
-
-
-           <%# if max.training.id == limit.id %>
-             <%# limit.id = max.training.id %>
+<% @limits.each do |limit| %>
 
   <% if training.max.id == limit.id %>
 
-      <%# limit.id = limit.max_id %>
-
-
-<%#= max.id %>
+ 
 <ul>
 <p>
 今の君のMAXは<%= (limit.max_weight * limit.rep / 40 + limit.max_weight)  %>kg
@@ -99,25 +91,16 @@ x ++
           </h3>
              
         
-
             <% end %>
             <% end %>
             <% end %>
-
- <%# <% @limits.each do |limit| %>
- 
-
-        <%# <div class='item-info'>
-          <h3 class='item-name'>
-            <%= limit.max_weight %>
-          <%# </h3>
-
-<%#  <% end %>
-
-      <%# <%= link_to "Max登録画面に進む", training_maxes_path(@training.id) ,class:"item-red-btn"%> 
+            <% end %> 
         </div>
+        <li class="background-red" id="trainings">本日のトレーニング終了
       </li>
-      </ul>
+     </div>
+
+
       <% else %>
     
 
@@ -130,6 +113,7 @@ x ++
           <h3 class='item-name'>
             <%= training.training_name %>
           </h3>
+          </div>
              
             <% end %>
                 <%= link_to new_training_max_path(training.id) do %>
@@ -146,7 +130,7 @@ x ++
       </li>
       </ul>
       <% end %>
-      <% end %>
+    <% end %>
       
 
 

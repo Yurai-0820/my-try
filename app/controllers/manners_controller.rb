@@ -1,7 +1,7 @@
 class MannersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :manners, only: [:edit, :update, :show, :destroy]
-  before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :manners, only: %i[edit update show destroy]
+  before_action :move_to_index, only: %i[edit update destroy]
 
   def index
     @manners = Manner.order('created_at DESC')
@@ -14,20 +14,14 @@ class MannersController < ApplicationController
   def create
     @manner = Manner.new(manner_params)
 
-    if @manner.save
-      redirect_to root_path
-    
-    end
+    redirect_to root_path if @manner.save
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
-  def destroy    
-  end
+  def destroy; end
 
   def manner_params
     params.require(:manner).permit(:genre_id, :title, :description).merge(user_id: current_user.id)
@@ -40,5 +34,4 @@ class MannersController < ApplicationController
   def move_to_index
     redirect_to action: :index unless current_user.id != 1
   end
-
 end

@@ -5,11 +5,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       ## Database authenticatable
       t.string :nickname,           null: false
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
       t.integer :age,               null: false
       t.integer :purpose_body_id,   null: false
-      t.integer :day_training_time_id,   null: false
+      t.integer :day_training_time_id, null: false
 
       ## Recoverable
       t.string   :reset_password_token
@@ -35,7 +35,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
 
       t.timestamps null: false
     end

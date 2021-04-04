@@ -1,7 +1,8 @@
-<h1 class='item-lists'>マナー・心得一覧</h1>
+<h1 class='manner-lists'>マナー・心得一覧</h1>
 
 
-<h1> マナー </h1>
+<h1 class='manner-main'> class='item-lists' マナー </h1>
+
      <% @manners.each do |manner| %>
    <% if manner.genre_id == 2%>
     <ul class='item-lists'>
@@ -19,7 +20,7 @@
       </ul>
       <% end %>
 
-      <h1> 心得 </h1>
+      <h1 class='manner-main'> 心得 </h1>
      <% @manners.each do |manner| %>
    <% if manner.genre_id == 3%>
     <ul class='item-lists'>
