@@ -6,7 +6,49 @@
   align-items: center;
   flex-direction: column;
   min-width: 500px;
-  color: pink;
 }
 
+.manner-main {
+  width: 80vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.manner-title {
+  color:red;
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.manner-lists{
+  color:red;
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  text-align: left;
+}
+
+.manner-info{
+  color:red;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.manner-name{
+  color:red;
+  margin-left: 15px;
+  margin-bottom: 3px;
+  font-size: 25px;
+}
+
+.manner-description{
+  color:red;
+  margin-left: 30px;
+  margin-bottom: 3px;
+  font-size: 20px;
+}
 

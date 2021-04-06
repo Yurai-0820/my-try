@@ -1,45 +1,55 @@
 <div class="manner-contents">
- <%= render "shared/second-header"%>
-
-  <h1 class='manner-lists'>マナー・心得一覧</h1>
+  <%= render "shared/second-header"%>
 
 
+  <div class='manner-main'>
+    <h2 class="manner-title">ウエイトトレーニングをするに当たって</h2>
+
+    <div>
+      <h3 class='manner-lists'> ジム利用のマナー </h3>
+       <% @manners.each do |manner| %>
+       <% if manner.genre_id == 2%>
+
+         <div class='manner-info'>
+       <ul>
+       <li>
+           <h3 class='manner-name'>
+             <%= manner.title %>
+           </h3>
+           <h3 class='manner-description'>
+             <%= manner.description %>
+           </h3>
+         </div>
+      </li>
+      </ul>
+      <% end %>
+      <% end %>
+    </div>
 
 
-     <% @manners.each do |manner| %>
-   <% if manner.genre_id == 2%>
-    <ul class='item-lists'>
-            <li class='list'>
-            <%= link_to manner_path(manner.id) do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= manner.title %>
-          </h3>
-            <% end %>
-            <% end %>
+    <div>
+      <h3 class='manner-lists'> ウエイトトレーニングの心得 </h3>
+      <% @manners.each do |manner| %>
+      <% if manner.genre_id == 3%>
 
+        <div class='manner-info'>
+      <ul>
+        <li>
+           <h3 class='manner-name'>
+           <%= manner.title %>
+           </h3>
+           <h3 class='manner-description'>
+             <%= manner.description %>
+           </h3>
         </div>
       </li>
       </ul>
       <% end %>
-
-      <h1 class='manner-main'> 心得 </h1>
-     <% @manners.each do |manner| %>
-   <% if manner.genre_id == 3%>
-    <ul class='item-lists'>
-            <li class='list'>
-            <%= link_to manner_path(manner.id) do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= manner.title %>
-          </h3>
-            <% end %>
-            <% end %>
-
-        </div>
-      </li>
-      </ul>
       <% end %>
+    </div>
+  </div>
+
+
 
   <%= render "shared/second-footer"%>
-        </div>
+</div>
