@@ -21,12 +21,13 @@
 
       <% if training.max.present? %> 
       
-<%# x = 2
-今日のトレーニングが終了したら
-x ++ 
-7の次が2 %>
-       <% if training.muscle_part_id == 2 %>
-       <%# muscle_part_id ++ %>
+<% x = 2 %>
+
+
+
+       <% if training.muscle_part_id == x %>
+       
+       <%# x += 1 %>
           
 
     <ul class='item-lists'>
@@ -91,7 +92,7 @@ x ++
       <% if max.training.id == training.id %>
       <% @limit.max_id = max.id %>
 
-     <%= link_to edit_limit_path(max.id) do %>
+     <%= button_to edit_limit_path(max.id), method: :get do %>
         <div class='item-info'>
           <h3 class='item-name'>
 
@@ -148,6 +149,25 @@ x ++
       <% end %>
       <% end %>
       
+      <%# <% x = 1%>
+
+<%#= button_to new_user_path, {method: :get} do %>
+  <%# <i class="fa-user"></i> 本日のトレーニングを終了する %>
+<%# end %>
+
+<%#= x %> 
+
+
+  <%# <%= button_to root_path, {method: :get, id:"click"} do %>
+  <%# <i class="fa-user"></i> 本日のトレーニングを終了する %>
+<%# end %> 
+
+
+<%= link_to "本日のトレーニングを終了する", 'javascript:;', class: 'finish', data: { 'array' => %w(foo bar) } %>
+
+
+
+
 
 
 <%= render "shared/footer" %>

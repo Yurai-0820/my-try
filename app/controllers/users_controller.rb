@@ -32,6 +32,7 @@ def create
   end
 
   def update 
+    @users = User.new
   end
 
 
