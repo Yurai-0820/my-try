@@ -6,7 +6,7 @@ class Training < ApplicationRecord
 
   with_options presence: true do
     with_options numericality: { other_than: 1 } do
-    validates :muscle_part_id
+      validates :muscle_part_id
     end
     validates :training_name
     validates :target_muscle

@@ -9,9 +9,7 @@ class AddMax
     validates :user_id
   end
 
-
   def save
-
     max = Max.create(user_id: user_id, training_id: training_id)
 
     Limit.create(max_weight: max_weight, rep: rep, max_id: max.id)

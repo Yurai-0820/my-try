@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'training-font';
+  src: url('読み込むフォントファイルのパス') format('フォーマット名');
+}
 a {
   text-decoration: none;
 }
@@ -237,11 +241,23 @@ a {
   font-weight: bold;
 }
 
-.item-lists {
+.training-index-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 20px 0 20px 0;
+  font-size: 40px;
+  
+}
+
+.item-lists  {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0 20px 0;
+  font-size: 30px;
 }
 
 .item-lists>.list {

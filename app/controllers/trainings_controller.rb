@@ -1,7 +1,7 @@
 class TrainingsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :trainings, only: [:edit, :update, :show, :destroy]
-  before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :trainings, only: %i[edit update show destroy]
+  before_action :move_to_index, only: %i[edit update destroy]
 
   def index
     @trainings = Training.order('created_at DESC')
@@ -15,26 +15,20 @@ class TrainingsController < ApplicationController
   def create
     @training = Training.new(training_params)
 
-    if @training.save
-      redirect_to root_path
-    
-    end
+    redirect_to root_path if @training.save
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-    
-  end
+  def edit; end
 
-  def destroy    
-  end
+  def destroy; end
 
   private
 
   def training_params
-    params.require(:training).permit(:muscle_part_id, :training_name, :target_muscle, :training_description, :video_url).merge(user_id: current_user.id)
+    params.require(:training).permit(:muscle_part_id, :training_name, :target_muscle, :training_description,
+                                     :video_url).merge(user_id: current_user.id)
   end
 
   def trainings
@@ -44,6 +38,4 @@ class TrainingsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless current_user.id != 1
   end
-
-
 end

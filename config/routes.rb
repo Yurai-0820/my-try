@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :manners
   resources :limits
   resources :trainings do
-  resources :maxes 
-
-end
+    resources :maxes
+  end
 end

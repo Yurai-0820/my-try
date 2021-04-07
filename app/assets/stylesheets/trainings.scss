@@ -4,42 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-.chest {
-  text-align: center;
-  font-size: 40px;
-  color: midnightblue;
-  font-family: 'Lobster', cursive;
-}
-
-.back {
-  text-align: center;
-  font-size: 40px;
-  color: midnightblue;
-  font-family: 'Lobster', cursive;
-}
-
-.sholder {
-  text-align: center;
-  font-size: 40px;
-  color: midnightblue;
-  font-family: 'Lobster', cursive;
-}
-
-.arm {
-  text-align: center;
-  font-size: 40px;
-  color: midnightblue;
-  font-family: 'Lobster', cursive;
-}
-
-.leg {
-  text-align: center;
-  font-size: 40px;
-  color: midnightblue;
-  font-family: 'Lobster', cursive;
-}
-
-.stomach {
+//main-trainingの編集
+.tra-main-name {
   text-align: center;
   font-size: 40px;
   color: midnightblue;
@@ -47,10 +13,8 @@
 }
 
 //トレーニング記述名の編集
-
 .training-name {
-  font-size: 25px;
-  color: black;
-  background-color: greenyellow;
-  width: 100vw;
+  white-space: nowrap;
+  font-size: 20px;
 }
+

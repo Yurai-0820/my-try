@@ -6,7 +6,7 @@ class MusclePart < ActiveHash::Base
     { id: 4, name: '肩' },
     { id: 5, name: '腕' },
     { id: 6, name: '脚' },
-    { id: 7, name: '腹' },
+    { id: 7, name: '腹' }
   ]
 
   include ActiveHash::Associations
