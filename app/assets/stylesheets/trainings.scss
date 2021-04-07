@@ -3,18 +3,45 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/earlyaccess/nicomoji.css');
+
+.training-index-contents {
+  background-image: image-url("girl-in-the-gym-1391368_1920.jpg");
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.training-main {
+  padding-top: 10px;
+  text-align: center;
+
+}
+
+//トレーニング一覧
+.training-index-title{
+  font-size: 50px;
+  color: rgb(231, 183, 26);
+  padding-bottom: 20px;
+  font-family: "Nico Moji";
+}
 
 //main-trainingの編集
 .tra-main-name {
   text-align: center;
   font-size: 40px;
-  color: midnightblue;
+  color: rgb(231, 183, 26);
   font-family: 'Lobster', cursive;
 }
 
 //トレーニング記述名の編集
 .training-name {
   white-space: nowrap;
-  font-size: 20px;
+  font-size: 30px;
+  color: rgb(202, 194, 169);
+  font-family: "Nico Moji";
 }
+
+
 

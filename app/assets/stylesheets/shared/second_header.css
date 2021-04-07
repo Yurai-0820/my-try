@@ -6,9 +6,11 @@
   align-items: center;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 .second-logo {
+  margin: 0 auto;
   width: 40vw;
-  height: 20vh;
+  height: 15vh;
 }
