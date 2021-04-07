@@ -167,14 +167,82 @@ a {
 
 /* //画面中央の「会員数日本一位」帯部分 */
 
-/* FURIMAの特徴 */
+/* こんな悩みありませんか？の部分 */
+.trouble-contents {
+  padding: 5vh 15vw;
+  text-align: center;
+}
+
+.trouble-contents>.title {
+  text-align: center;
+  font-size: 5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.trouble-contents>.title-list {
+  text-align: center;
+  font-size: 5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.trouble-contents>.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: rgb(216, 61, 61);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.trouble-lists {
+  display: inline-block;
+}
+
+.trouble-lists>.list {
+}
+
+.trouble-list-text {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 50px;
+  text-align: left;
+}
+
+.trouble-list-description {
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: center;
+  margin-left: auto;
+}
+.trouble-contents>.sign-in {
+  font-size: 30px;
+  text-align: center;
+  background-color: royalblue;
+  color: white;
+}
+
+/*  */
 .feature-contents {
   padding: 5vh 15vw;
 }
 
 .feature-contents>.title {
   text-align: center;
-  font-size: 3.5vh;
+  font-size: 4vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.feature-contents>.title-list {
+  text-align: center;
+  font-size: 5vh;
   font-weight: bold;
   margin-bottom: 5vh;
   position: relative;
@@ -184,7 +252,7 @@ a {
   content: '';
   width: 70px;
   height: 4px;
-  background-color: #3ccace;
+  background-color: rgb(216, 61, 61);
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -208,12 +276,19 @@ a {
   font-weight: bold;
   font-size: 22px;
   line-height: 50px;
+  width: 20vw;
 }
 
 .feature-list-description {
   font-size: 18px;
   margin-top: 20px;
+  width: 20vw;
 }
+
+.list-pict {
+  width: 20vw;
+}
+
 
 /* //FURIMAの特徴 */
 

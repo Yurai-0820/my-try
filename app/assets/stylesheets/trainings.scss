@@ -6,17 +6,15 @@
 @import url('https://fonts.googleapis.com/earlyaccess/nicomoji.css');
 
 .training-index-contents {
-  background-image: image-url("girl-in-the-gym-1391368_1920.jpg");
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  background-image: image-url("girl-in-the-gym-1391368_1920.jpg");
 }
 
 .training-main {
   padding-top: 10px;
   text-align: center;
-
 }
 
 //トレーニング一覧
@@ -43,5 +41,15 @@
   font-family: "Nico Moji";
 }
 
+//userトレーニング一覧とマナー一覧のviewの部分
+
+.user-nickname-contents {
+  text-align: center;
+}
+
+.user-nickname-title {
+  display: inline-block;
+  font-size: 5vh;
+}
 
 
