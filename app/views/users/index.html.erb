@@ -86,7 +86,7 @@
           <div class="user-nickname-title"><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></div>
           <div class="user-nickname-title"><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></div>
     </div>
-
+  <% else %>
       <div class='feature-contents'>
     <h2 class='title'>
       トレーニング一覧とマナー一覧をクリックしてみよう！
@@ -109,7 +109,7 @@
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "ゴリマッチョ.jpeg", class:"list-pict">
+        <%# <%= image_tag "ゴリマッチョ.jpeg", class:"list-pict"> %>
         <p class='feature-list-description'>
           ゴリマッチョ！！！
         </p>
@@ -117,17 +117,18 @@
     </ul>
   </div>
 
-      <% else %>
+    
        
 
       <% end %>
   </div>
 
   
+<% if user_signed_in? %>
 
     <% @trainings.each do |training| %>
 
-      <% if training.max.present? %> 
+      <% if training.max.present? && current_user.id == training.max.user_id %> 
       
 
   <meta charset="UTF-8">
@@ -207,7 +208,7 @@
 
 
 
-      <% else %>
+      <% elsif training.max.present? && current_user.id != training.max.user_id %> 
     
 
 
@@ -231,11 +232,12 @@
             <% end %>
 
 
-      <%# <%= link_to "Max登録画面に進む", training_maxes_path(@training.id) ,class:"item-red-btn"%> 
+
         </div>
       </li>
       </ul>
       <% end %>
+    <% end %>
     <% end %>
       
 
