@@ -1,10 +1,10 @@
-<div class="training-contents">
-<%= render "shared/second-header"%>
+<div class="training-index-contents">
+  <%= render "shared/second-header"%>
   <div class="training-main">
     <h2 class="training-title">トレーニング情報を入力</h2>
     <%= form_with model: @training, local: true do |f| %>
     
-  <%= render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
     <div class="weight-bold-text">
           部位の選択
           <span class="indispensable">必須</span>
@@ -46,8 +46,7 @@
           <%=link_to 'もどる', root_path, class:"back-btn" %>
         </div>
       <%# /下部ボタン %>
-  </div>
+     </div>
   <% end %>
-
   <%= render "shared/second-footer"%>
 </div>

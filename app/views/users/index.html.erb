@@ -1,23 +1,129 @@
 <%= render "shared/header" %>
 
- <ul>
-      <% if user_signed_in? && current_user.id == 1 %>
+<% unless user_signed_in? %>
+  <div class='feature-contents'>
+    <h2 class='title'>
+      Let's Training
+    </h2>
+    <h3 class='title-list'>
+      筋トレによってセルフイメージを向上して、豊かな生活を手に入れよう！
+    </h3>
+  
+    <ul class='feature-lists'>
+      <li class='list'>
+        <%= image_tag "signIn_前redies_1.jpeg", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          手軽に始められる！
+        </h3>
+        <p class='feature-list-description'>
+          たった１０分から始められるジム習慣❗️❗️❗️
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "signIn_前redies_2.jpeg", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          はじめの一歩が大切！
+        </h3>
+        <p class='feature-list-description'>
+          思い切ってジムに行ってみよう❗️❗️❗️
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "signIn_前redies_3.jpeg", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          理想の身体を手に入れよう！
+        </h3>
+        <p class='feature-list-description'>
+          筋トレならそれを叶えてくれる❗️❗️❗️
+        </p>
+      </li>
+    </ul>
+  </div>
 
-          <li><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></li>
-        
-         <li><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></li>
+  <div class='trouble-contents'>
+    <h2 class='title'>
+      こんな悩みはありませんか？？
+    </h2>
+  
+    <ul class='trouble-lists'>
+      <li class='list'>
+        <ul class='trouble-list-text'>
+          ・ジムに行ってみたいけど何からすれば良いかわからない…<br>
+          ・続けられるか不安…<br>
+          ・一回もダイエット成功したことがない…<br>
+        </ul>
+        <%= image_tag "trouble-contents.jpeg", class:"trouble-pict" %>
+      </li>
+    </ul>
+  </div>
+
+  <div class='trouble-contents'>      
+        <h2 class='title'>
+          そんな悩みを解決します！
+        </h2>  
+
+    <ul class='trouble-lists'>
+      <li class='list'>
+        <ul class='trouble-list-text'>
+          ・器具の使い方を動画で説明！<br>
+          ・重量及何回やれば良いかを教えてくれるため、目標が明確になるから続けやすい！<br>
+          ・食事のことについての知識も知れる！<br>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class='trouble-contents'> 
+      <ul class='sign-in'>
+        さっそく、無料で新規登録してみよう！
+      </ul>
+  </div>
+<% end %>
+
+  <div class="user-nickname-index">
+    <% if user_signed_in? && current_user.id == 1 %>
+    <div class="user-nickname-contents">
+          <div class="user-nickname-title"><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></div>
+          <div class="user-nickname-title"><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></div>
+    </div>
+
+      <div class='feature-contents'>
+    <h2 class='title'>
+      トレーニング一覧とマナー一覧をクリックしてみよう！
+    </h2>
+  
+    <ul class='feature-lists'>
+      <h3 class='title-list'>
+        あなたはどんな身体をめざす！？
+      </h3>
+      <li class='list'>
+        <%= image_tag "細マッチョ.jpeg", class:"list-pict" %>
+        <p class='feature-list-description'>
+          細マッチョ？
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "マッチョ.jpeg", class:"list-pict" %>
+        <p class='feature-list-description'>
+          マッチョ？
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "ゴリマッチョ.jpeg", class:"list-pict">
+        <p class='feature-list-description'>
+          ゴリマッチョ！！！
+        </p>
+      </li>
+    </ul>
+  </div>
 
       <% else %>
        
 
       <% end %>
-    </ul>
-    <h1 class='item-lists'>本日のトレーニングメニュー</h1>
+  </div>
 
-    本日の部位は
-    
   
-
 
     <% @trainings.each do |training| %>
 
@@ -29,6 +135,9 @@
   <div class="training", id="trainings-main">
 
        <div id="muscle_info" data-json="<% if training.muscle_part_id == 2 %>"></div>
+       <h1 class='item-lists'>本日のトレーニングメニュー</h1>
+
+    本日の部位は
       
        <%# muscle_part_id ++ %>
           
@@ -131,4 +240,4 @@
       
 
 
-<%= render "shared/footer" %>
+<%= render "shared/second-footer" %>

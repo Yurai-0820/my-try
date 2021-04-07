@@ -1,19 +1,22 @@
-<h1 class='training-index-lists'>トレーニング一覧</h1>
+<div class="training-index-contents">
+<%= render "shared/second-header"%>
+  <div class="training-main">
+    <h1 class='training-index-title'>トレーニング一覧</h1>
+
+
 
 <h1 class="tra-main-name"> chest muscles </h1>
      <% @trainings.each do |training| %>
    <% if training.muscle_part_id == 2%>
-    <ul class='item-lists'>
-            <li class='list'>
+    <ul class='training-item-lists'>
+            <li class='training-list'>
             <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
+        
           <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
             <% end %>
             <% end %>
-
-        </div>
       </li>
       </ul>
       
@@ -23,17 +26,14 @@
 <h1 class="tra-main-name"> back muscles </h1>
      <% @trainings.each do |training| %>
    <% if training.muscle_part_id == 3%>
-    <ul class='item-lists'>
-            <li class='list'>
+    <ul class='training-item-lists'>
+            <li class='training-list'>
             <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
           <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
             <% end %>
             <% end %>
-
-        </div>
       </li>
       </ul>
       <% end %>
@@ -42,17 +42,14 @@
 <h1 class="tra-main-name">  shoulder muscles </h1>
      <% @trainings.each do |training| %>
    <% if training.muscle_part_id == 4%>
-    <ul class='item-lists'>
-            <li class='list'>
+    <ul class='training-item-lists'>
+            <li class='training-list'>
             <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
           <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
             <% end %>
             <% end %>
-
-        </div>
       </li>
       </ul>
       <% end %>
@@ -60,16 +57,14 @@
 <h1 class="tra-main-name"> arm muscles </h1>
      <% @trainings.each do |training| %>
    <% if training.muscle_part_id == 5%>
-    <ul class='item-lists'>
-      <li class='list'>
+    <ul class='training-item-lists'>
+            <li class='training-list'>
             <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
           <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
             <% end %>
             <% end %>
-        </div>
       </li>
       </ul>
       <% end %>
@@ -77,17 +72,14 @@
 <h1 class="tra-main-name"> leg muscles </h1>
      <% @trainings.each do |training| %>
    <% if training.muscle_part_id == 6%>
-    <ul class='item-lists'>
-            <li class='list'>
+    <ul class='training-item-lists'>
+            <li class='training-list'>
             <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
           <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
             <% end %>
             <% end %>
-
-        </div>
       </li>
       </ul>
       <% end %>
@@ -95,17 +87,18 @@
 <h1 class="tra-main-name"> abdomimal muscles </h1>
      <% @trainings.each do |training| %>
    <% if training.muscle_part_id == 7%>
-    <ul class='item-lists'>
-            <li class='list'>
+    <ul class='training-item-lists'>
+            <li class='training-list'>
             <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
+       
           <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
             <% end %>
             <% end %>
-
-        </div>
       </li>
       </ul>
       <% end %>
+  </div>
+  <%= render "shared/second-footer"%>
+</div>
