@@ -81,7 +81,7 @@
 <% end %>
 
   <div class="user-nickname-index">
-    <% if user_signed_in? && current_user.id == 1 %>
+    <% if user_signed_in? && current_user.id == 2 %>
     <div class="user-nickname-contents">
           <div class="user-nickname-title"><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></div>
           <div class="user-nickname-title"><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></div>
@@ -128,7 +128,7 @@
 
     <% @trainings.each do |training| %>
 
-      <% if training.max.present? && current_user.id == training.max.user_id %> 
+      <% if training.max.present? %> 
       
 
   <meta charset="UTF-8">
@@ -138,53 +138,52 @@
        <div id="muscle_info" data-json="<% if training.muscle_part_id == 2 %>"></div>
        <h1 class='item-lists'>本日のトレーニングメニュー</h1>
 
-    本日の部位は
+    <h1 class="item-lists">本日の部位は</h1>
       
        <%# muscle_part_id ++ %>
           
 
     <ul class='item-lists'>
-            <li class='list'>
+      <li class='list'>
             <%= link_to training_path(training.id) do %>
         <div class='item-info'>
           <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
-            
             <% end %>
-          
-
         </div>
       </li>
-      </ul>
+    </ul>
 
-<% @limits.each do |limit| %>
+          <% @limits.each do |limit| %>
 
-  <% if training.max.id == limit.id %>
+            <% if training.max.id == limit.id %>
 
- 
-<ul>
-<p>
-今の君のMAXは<%= (limit.max_weight * limit.rep / 40 + limit.max_weight)  %>kg
-</p>
-<p>
-セットメニュー
-</p>
-<p>
-<%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85 %>kg  8回  メインセット
-</p> 
-<p>
-<%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75 %>kg  10回
-</p>
-<p>
-<%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65 %>kg  12回
-</p>
-</ul>
+            <div class="max-weight-contents">
+              <ul class="max-weight-wrap">
+                <p class="max-weight">
+                  今の君のMAXは<%= (limit.max_weight * limit.rep / 40 + limit.max_weight)  %>kg
+                </p>
+                <p class="max-weight">
+                  セットメニュー
+                </p>
+                <p class="max-weight">
+                  <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85 %>kg  8回  メインセット
+                </p> 
+                <p class="max-weight">
+                  <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75 %>kg  10回
+                </p>
+                <p class="max-weight">
+                  <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65 %>kg  12回
+                </p>
+              </ul>
+            </div>
+          <% end %>
+        <% end %>
 
 
-           <% end %>
-           <% end %>
-
+           
+          
 
             <% @maxes.each do |max| %>
 
@@ -204,11 +203,11 @@
             <% end %>
             <% end %>
             <% end %>
-            <% end %> 
+            <% end %>  
 
 
 
-      <% elsif training.max.present? && current_user.id != training.max.user_id %> 
+      <% else %> 
     
 
 
