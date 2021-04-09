@@ -1,31 +1,36 @@
 <div class="try-contents">
-<%= render "shared/header" %>
+  <%= render "shared/header" %>
 
-<%# 商品の概要 %>
+
   <div class="try-main">
     <div class="try-name">
-      <%= @training.training_name%>
+      <%= @training.training_name%>のやり方
     </div>
 
-<h1> 
-  <%= @training.muscle_part.name%>  
-  </h1>
-<h1> 
-  <%= @training.target_muscle%>  
-  </h1>
-<h1> 
-  <%= @training.training_description %>  
-  </h1>
+    <div class="try-info">
+    <div class="target-name">
+      対象の部位  「<%= @training.muscle_part.name%>」  
+    </div>
+
+    <div class="target-muscle">
+      狙う筋肉  「<%= @training.target_muscle%>」  
+    </div>
+    
+    <div class="try-description">
+     <%= simple_format(@training.training_description) %>  
+    </div>
  
 
-  
-<iframe width="1000" height="578" src= <%= @training.video_url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-    </div>
-
-
-
-
-<%= render "shared/second-footer" %>
+    <div class="try-movie">
+     <iframe width="890" height="500" src= <%= @training.video_url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
+
+
+  </div>
+  </div>
+
+
+
+
+  <%= render "shared/second-footer" %>
+</div>
