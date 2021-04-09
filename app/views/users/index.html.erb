@@ -1,3 +1,4 @@
+<div class="toppage-backimg">
 <%= render "shared/header" %>
 
 <% unless user_signed_in?  %>
@@ -86,154 +87,143 @@
           <div class="user-nickname-title"><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></div>
           <div class="user-nickname-title"><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></div>
     </div>
-  <% elsif user_signed_in? %>
+
+  <% elsif user_signed_in? && current_user.id != 1 %>
   <div class='feature-training-contents'>
     <h2 class='training-index-title'>
-      トレーニング一覧とマナー一覧をクリックしてみよう！
+      まずは「ジムの心得・マナー集」を読んでみよう！
     </h2>
   
     <ul class='feature-training-lists'>
       <h3 class='training-title-list'>
         あなたはどんな身体をめざす！？
       </h3>
+      <div class = 'training-pic-lists' >
       <li class='training-pic-list'>
         <%= image_tag "トレーニング女子.jpeg", class:"training-list-pict" %> 
-        <p class='feature-list-description'>
-        </p>
+       
       </li>
       <li class='training-pic-list'>
         <%= image_tag "training男性.jpeg", class:"training-list-pict" %>
-        <p class='feature-list-description'>
-        </p>
+      </div>
+     
       </li>
     </ul>
   </div>
-
-    
-       
-
-    
   </div>
+  <% end %>
 
+<% if user_signed_in? && current_user.id != 1 %>
+  <% @trainings.each do |training| %>
+
+      <% if training.muscle_part_id == 2 %>
   
+    <% if training.max.present? %> 
 
-    <% @trainings.each do |training| %>
+      <meta charset="UTF-8">
+      <script src="/js/training.js" defer></script>
+      <div class="training", id="trainings-main">
 
-      <% if training.max.present? %> 
-      
+        <h1 class='training-lists'>本日のトレーニングメニュー</h1>
 
-  <meta charset="UTF-8">
-  <script src="/js/training.js" defer></script>
-  <div class="training", id="trainings-main">
-
-       <div id="muscle_info" data-json="<% if training.muscle_part_id == 2 %>"></div>
-       <h1 class='item-lists'>本日のトレーニングメニュー</h1>
-
-    <h1 class="item-lists">本日の部位は</h1>
-      
-       <%# muscle_part_id ++ %>
-          
-
-    <ul class='item-lists'>
-      <li class='list'>
-            <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
-          <h3 class='training-name'>
+        <h1 class="training-parts">本日の部位は 「胸」</h1>
+        
+        <ul class='training-lists'>
+        <li class='list'>
+          <%= link_to training_path(training.id) do %>
+            <div class='today-main-sets'>
+            <h3 class='training-name'>
             <%= training.training_name %>
-          </h3>
-            <% end %>
-        </div>
-      </li>
-    </ul>
-
+            </h3>
+          <% end %>
+            </div>
+            </li>
+            </ul>
           <% @limits.each do |limit| %>
 
             <% if training.max.id == limit.id %>
             
 
-            <div class="max-weight-contents">
+              <div class="max-weight-contents">
               <ul class="max-weight-wrap">
-                <li class="max-weight">
-                  今の君のMAXは
-                </li>
-                <li class="max-set-weight-1">
+              <li class="max-set-weight-1">
+                  <span class = "max-weight" >今のMAX重量は</span>
+                  <% if limit.rep > 1 %>
                   <%= (limit.max_weight * limit.rep / 40 + limit.max_weight)  %>kg
-                </li>
-                <li class="max-weight">
+                  <% else %>
+                  <%= limit.max_weight %>kg
+                  <% end %>
+              </li>
+<div class = "set-menus" >
+<div class = "set-menu" >
+                <div class="max-weight">
                   セットメニュー
-                </li>
+                </div>
+                </div>
+
+<div class = "set-weight" >
                 <li class="max-set-weight">
-                  メインセット <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85 %>kg  8回
+                  メインセット　 <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85 %>kg  　8回
                 </li> 
                 <li class="max-set-weight">
-                  セカンドセット <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75 %>kg  10回
+                  セカンドセット <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75 %>kg 　10回
                 </li>
                 <li class="max-set-weight">
-                  サードセット <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65 %>kg  12回
+                  サードセット　 <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65 %>kg 　12回
                 </li>
-              </ul>
-            </div>
+                </div>
+                </div>
+
+                </ul>
+                </div>
+            <% end %>
           <% end %>
-        <% end %>
 
-
-           
-          
-
-            <% @maxes.each do |max| %>
-
-
-
-      <% if max.training.id == training.id %>
-      <% @limit.max_id = max.id %>
-
-     <%= link_to edit_limit_path(max.id) do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= "今日のメインセットを登録する" %>
-          </h3>
-        </div>
-             
-        
+          <% @maxes.each do |max| %>
+            <% if max.training.id == training.id %>
+              <% @limit.max_id = max.id %>
+             <div class='today-main-sets'>
+              <%= link_to edit_limit_path(max.id) do %>
+                  <div class='today-main-set'>
+                  <%= "今日のメインセットを登録する" %>
+                  </div>
+              </div>
+              </div>
+              <% end %>
             <% end %>
-            <% end %>
-            <% end %>
-            <% end %>  
-
-
-
+          <% end %>
       <% else %> 
-    
-
-
-
-       <ul class='item-lists'>
+ 
+       <ul class='training-lists'>
             <li class='list'>
             <%= link_to training_path(training.id) do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <div class='today-main-sets'>
+          <h3 class='training-name'>
             <%= training.training_name %>
           </h3>
           </div>
-             
-            <% end %>
-                <%= link_to new_training_max_path(training.id) do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= "Max登録画面に進む" %>
-          </h3>
-             
-            <% end %>
-
-
-
-        </div>
-      </li>
+              </li>
       </ul>
+            <% end %>
+            <div class='training-lists'>
+             まずは自分の体重の半分の重さで、何回出来るか挑戦しよう！
+          </div>
+                <%= link_to new_training_max_path(training.id) do %>
+        <div class='today-main-sets'>
+          <div class='today-main-set'>
+            <%= "重量と回数を登録する" %>
+          </div>
+             
+            <% end %>
+        </div>
+     
+         <% end %>  
       <% end %>
     <% end %>
     <% end %>
+
       
 
 
 <%= render "shared/second-footer" %>
+</div>
