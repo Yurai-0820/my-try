@@ -1,8 +1,28 @@
+.user-contents {
+  background-image: image-url("62577.jpeg");
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+  background-size: cover;
+
+
+}
+
+
+
+
+
+
+
+
 .registration-main {
   width: 100%;
   min-width: 800px;
   height: 100%;
-  background-color: #f5f5f5;
+
   display: flex;
   justify-content: center;
 }
@@ -10,7 +30,7 @@
 /* form-wrapは商品購入画面でも使用しています */
 .form-wrap {
   width: 50%;
-  background-color: white;
+
   padding-bottom: 70px;
 }
 
