@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<% unless user_signed_in? %>
+<% unless user_signed_in?  %>
   <div class='feature-contents'>
     <h2 class='title'>
       Let's Training
@@ -86,7 +86,7 @@
           <div class="user-nickname-title"><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></div>
           <div class="user-nickname-title"><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></div>
     </div>
-  <% else %>
+  <% elsif user_signed_in? %>
   <div class='feature-training-contents'>
     <h2 class='training-index-title'>
       トレーニング一覧とマナー一覧をクリックしてみよう！
@@ -112,11 +112,10 @@
     
        
 
-      <% end %>
+    
   </div>
 
   
-<% if user_signed_in? %>
 
     <% @trainings.each do |training| %>
 
