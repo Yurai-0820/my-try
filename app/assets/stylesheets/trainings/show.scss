@@ -1,5 +1,5 @@
-.manner-contents {
-  background-image: image-url("4021570_l.jpg");
+.try-contents {
+  background-image: image-url("4722489_m.jpg");
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
   display: flex;
@@ -11,14 +11,16 @@
   background-blend-mode:lighten;
 }
 
-.manner-main {
+.try-main {
   width: 100vw;
   min-width: 450px;
-  padding: 10vh 15vw;
+  flex-direction: column;
   font-family: serif;
+  text-align: center;
+  padding: 10vh 15vw;
 }
 
-.manner-title {
+.try-name {
   color:black;
   text-shadow:0 0 10px white;
   font-weight: bold;
@@ -26,10 +28,16 @@
   margin-bottom: 10px;
   font-size: 50px;
   text-align: center;
-
 }
 
-.manner-lists{
+.try-info{
+  margin-bottom: 10px;
+  text-align: left;
+  background-color:rgba(0, 0, 0, 0.3);
+  background-blend-mode:lighten;
+}
+
+.target-name{
   color:rgb(233, 133, 12);
   text-shadow:0 0 10px white;
   font-weight: bold;
@@ -37,18 +45,10 @@
   margin: 20px 0 10px 0;
   font-size: 40px;
   text-align: left;
-
 }
 
-.manner-info{
-  margin-bottom: 10px;
-  text-align: left;
-  background-color:rgba(0, 0, 0, 0.1);
-  background-blend-mode:lighten;
-}
-
-.manner-name{
-  color:darkblue;
+.target-muscle{
+  color:rgb(0, 0, 228);
   text-shadow:0 0 10px white;
   margin-left: 15px;
   margin-bottom: 3px;
@@ -56,8 +56,8 @@
   font-weight: bold;
 }
 
-.manner-description{
-  color:darkblue;
+.try-description{
+  color:rgb(0, 0, 228);
   text-shadow:0 0 10px white;
   margin-left: 30px;
   margin-bottom: 3px;
@@ -65,20 +65,6 @@
   font-weight: bold;
 }
 
-.btn{
-  color:darkblue;
-  margin-left: 30px;
-  margin-bottom: 3px;
-  font-size: 25px;
-  font-weight: bold;
-  font-family: serif;
-}
-
-.btn2{
-  color:rgb(238, 255, 0);
-  margin-left: 30px;
-  margin-bottom: 3px;
-  font-size: 25px;
-  font-weight: bold;
-  font-family: serif;
+.try-movie{
+  text-align: center;
 }
