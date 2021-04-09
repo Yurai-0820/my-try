@@ -1,10 +1,11 @@
+<div class="try-contents">
 <%= render "shared/header" %>
 
 <%# 商品の概要 %>
-  <div class="item-box">
-    <h2 class="name">
+  <div class="try-main">
+    <div class="try-name">
       <%= @training.training_name%>
-    </h2>
+    </div>
 
 <h1> 
   <%= @training.muscle_part.name%>  
@@ -18,7 +19,7 @@
  
 
   
-<iframe width="1206" height="678" src= <%= @training.video_url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1000" height="578" src= <%= @training.video_url %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
     </div>
@@ -26,4 +27,5 @@
 
 
 
-<%= render "shared/footer" %>
+<%= render "shared/second-footer" %>
+  </div>
