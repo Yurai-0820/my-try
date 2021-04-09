@@ -36,7 +36,7 @@
 //トレーニング記述名の編集
 .training-name {
   white-space: nowrap;
-  font-size: 30px;
+  font-size: 45px;
   color: rgb(202, 194, 169);
   font-family: "Nico Moji";
 }
@@ -55,4 +55,47 @@
 //マックス値とセットメニュー
 .max-weight-contents {
   text-align: center;
+}
+
+.max-weight-wrap {
+
+}
+
+.max-weight {
+  font-size: 25px;
+}
+
+.max-set-weight {
+  font-size: 20px;
+  text-align: left;
+}
+
+.max-set-weight-1 {
+  font-size: 20px;
+  color: red;
+  border-bottom: rgb(231, 183, 26);
+}
+
+//trainingページの画像の編集
+.feature-training-contents {
+  text-align: center;
+}
+
+.training-index-title {
+  font-size: 45px;
+}
+.feature-training-lists {
+  
+}
+
+.training-title-list {
+  font-size: 35px;
+}
+
+.training-pic-list {
+ 
+}
+
+.training-list-pict {
+ width: 60%;  
 }

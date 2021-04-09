@@ -81,37 +81,29 @@
 <% end %>
 
   <div class="user-nickname-index">
-    <% if user_signed_in? && current_user.id == 2 %>
+    <% if user_signed_in? && current_user.id == 1 %>
     <div class="user-nickname-contents">
           <div class="user-nickname-title"><%= link_to 'トレーニングを追加する', new_training_path, class: "user-nickname" %></div>
           <div class="user-nickname-title"><%= link_to 'マナーを追加する', new_manner_path, class: "user-nickname" %></div>
     </div>
   <% else %>
-      <div class='feature-contents'>
-    <h2 class='title'>
+  <div class='feature-training-contents'>
+    <h2 class='training-index-title'>
       トレーニング一覧とマナー一覧をクリックしてみよう！
     </h2>
   
-    <ul class='feature-lists'>
-      <h3 class='title-list'>
+    <ul class='feature-training-lists'>
+      <h3 class='training-title-list'>
         あなたはどんな身体をめざす！？
       </h3>
-      <li class='list'>
-        <%= image_tag "細マッチョ.jpeg", class:"list-pict" %>
+      <li class='training-pic-list'>
+        <%= image_tag "トレーニング女子.jpeg", class:"training-list-pict" %>
         <p class='feature-list-description'>
-          細マッチョ？
         </p>
       </li>
-      <li class='list'>
-        <%= image_tag "マッチョ.jpeg", class:"list-pict" %>
+      <li class='training-pic-list'>
+        <%= image_tag "training男性.jpeg", class:"training-list-pict" %>
         <p class='feature-list-description'>
-          マッチョ？
-        </p>
-      </li>
-      <li class='list'>
-        <%# <%= image_tag "ゴリマッチョ.jpeg", class:"list-pict"> %>
-        <p class='feature-list-description'>
-          ゴリマッチョ！！！
         </p>
       </li>
     </ul>
@@ -158,24 +150,28 @@
           <% @limits.each do |limit| %>
 
             <% if training.max.id == limit.id %>
+            
 
             <div class="max-weight-contents">
               <ul class="max-weight-wrap">
-                <p class="max-weight">
-                  今の君のMAXは<%= (limit.max_weight * limit.rep / 40 + limit.max_weight)  %>kg
-                </p>
-                <p class="max-weight">
+                <li class="max-weight">
+                  今の君のMAXは
+                </li>
+                <li class="max-set-weight-1">
+                  <%= (limit.max_weight * limit.rep / 40 + limit.max_weight)  %>kg
+                </li>
+                <li class="max-weight">
                   セットメニュー
-                </p>
-                <p class="max-weight">
-                  <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85 %>kg  8回  メインセット
-                </p> 
-                <p class="max-weight">
-                  <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75 %>kg  10回
-                </p>
-                <p class="max-weight">
-                  <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65 %>kg  12回
-                </p>
+                </li>
+                <li class="max-set-weight">
+                  メインセット <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85 %>kg  8回
+                </li> 
+                <li class="max-set-weight">
+                  セカンドセット <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75 %>kg  10回
+                </li>
+                <li class="max-set-weight">
+                  サードセット <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65 %>kg  12回
+                </li>
               </ul>
             </div>
           <% end %>
@@ -195,9 +191,9 @@
      <%= link_to edit_limit_path(max.id) do %>
         <div class='item-info'>
           <h3 class='item-name'>
-
             <%= "今日のメインセットを登録する" %>
           </h3>
+        </div>
              
         
             <% end %>
