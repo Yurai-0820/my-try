@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/earlyaccess/nicomoji.css');
 
 .toppage-backimg {
-  background-image: image-url("cherry-blossom.png");
+  background-image: image-url("cherry-blossom_00005.jpg");
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
 
   background-size: cover;
@@ -26,7 +26,7 @@
 }
 
 .training-main {
-  padding-top: 10px;
+  padding-top: 1px;
   text-align: center;
 }
 
@@ -37,7 +37,6 @@
   padding-bottom: 20px;
   font-family: "Nico Moji";
 
-  text-shadow:0 0 15px rgb(61, 0, 70);
 }
 
 //main-trainingの編集
@@ -150,7 +149,7 @@ justify-content: center;
 .training {
   width: 100vw;
   min-width: 450px;
-  padding: 10vh 15vw;
+  padding: 10px 15vw;
 
 }
 

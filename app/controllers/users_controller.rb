@@ -27,17 +27,11 @@ class UsersController < ApplicationController
     def show; end
 
     def edit
-      @user = User.new(user_params)
       @max = Max.find(params[:id])
       @trainings = Training.all
     end
 
     def update 
-      if @user.update(user_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
     end
   end
 
