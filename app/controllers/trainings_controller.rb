@@ -1,7 +1,7 @@
 class TrainingsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :trainings, only: %i[edit update show destroy]
-  before_action :move_to_index, only: %i[edit update destroy]
+  before_action :move_to_index, only: %i[new edit update destroy]
 
   def index
     @trainings = Training.order('created_at DESC')
@@ -36,6 +36,6 @@ class TrainingsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless current_user.id != 1
+    redirect_to action: :index if current_user.id != 1
   end
 end
