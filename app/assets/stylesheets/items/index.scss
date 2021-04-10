@@ -171,6 +171,11 @@ a {
 .trouble-contents {
   padding: 5vh 15vw;
   text-align: center;
+  font-size: 25px;
+  color: black;
+  padding-top: 25px;
+  font-weight: bold;
+  text-shadow:0 0 15px rgb(237, 98, 255);
 }
 
 .trouble-contents>.title {
@@ -191,9 +196,9 @@ a {
 
 .trouble-contents>.title::after {
   content: '';
-  width: 70px;
+  width: 100px;
   height: 4px;
-  background-color: rgb(216, 61, 61);
+  background-color: rgb(209, 5, 5);
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -230,6 +235,11 @@ a {
 /*  */
 .feature-contents {
   padding: 5vh 15vw;
+  font-size: 25px;
+  color: black;
+  padding-top: 25px;
+  font-weight: bold;
+  text-shadow:0 0 15px rgb(237, 98, 255);
 }
 
 .feature-contents>.title {

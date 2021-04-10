@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @users = User.order('created_at DESC')
     @user = User.all
@@ -37,4 +39,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:nickname, :email, :password, :age, :purpose_body_id, :day_training_time_id)
   end
+
 end
