@@ -17,11 +17,30 @@ class MannersController < ApplicationController
     redirect_to root_path if @manner.save
   end
 
-  def show; end
+  def show
+  
+  end
 
-  def edit; end
+  def edit
+  
+  end
 
-  def destroy; end
+  def update
+    if @manner.update(manner_params)
+      redirect_to manners_path
+    else
+      render :edit
+    end
+  end
+
+
+  def destroy
+    if @manner.destroy
+      redirect_to manners_path
+    else
+      redirect_to manners_path
+    end
+  end
 
   def manner_params
     params.require(:manner).permit(:genre_id, :title, :description).merge(user_id: current_user.id)
