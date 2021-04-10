@@ -31,7 +31,8 @@ class UsersController < ApplicationController
       @trainings = Training.all
     end
 
-    def update; end
+    def update 
+    end
   end
 
   private

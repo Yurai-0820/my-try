@@ -112,6 +112,9 @@
   </div>
   </div>
   <% end %>
+  
+ <h1 class='training-lists'>本日のトレーニングメニュー</h1>
+<h1 class="training-parts">本日の部位は 「胸」</h1>
 
 <% if user_signed_in? && current_user.id != 1 %>
   <% @trainings.each do |training| %>
@@ -124,9 +127,7 @@
       <script src="/js/training.js" defer></script>
       <div class="training", id="trainings-main">
 
-        <h1 class='training-lists'>本日のトレーニングメニュー</h1>
-
-        <h1 class="training-parts">本日の部位は 「胸」</h1>
+       
         
         <ul class='training-lists'>
         <li class='list'>
