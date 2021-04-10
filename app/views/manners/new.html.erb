@@ -11,8 +11,9 @@
     <div class="weight-bold-text">
           種類の選択
           <span class="indispensable">必須</span>
-        </div>
+    </div>
       <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    
 
     
     <div class="new-items">
@@ -21,8 +22,9 @@
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"例 心得その１", maxlength:"40" %>
+    </div>
     
-<div class="items-explain">
+      <div class="items-explain">
         <div class="weight-bold-text">
           説明
           <span class="indispensable">必須</span>
@@ -37,9 +39,8 @@
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
-  </div>
   <% end %>
-
+</div>
   <%= render "shared/second-footer"%>
 </div>
 

@@ -8,8 +8,9 @@
     <div class="weight-bold-text">
           部位の選択
           <span class="indispensable">必須</span>
-        </div>
+    </div>
       <%= f.collection_select(:muscle_part_id, MusclePart.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    
 
     
     <div class="new-items">
@@ -18,12 +19,16 @@
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :training_name, class:"items-text", id:"item-name", placeholder:"例 ベンチプレス（必須）", maxlength:"40" %>
+    </div>
 
     <div class="new-items">
       <div class="weight-bold-text">
         ターゲットの筋肉名
         <span class="indispensable">必須</span>
       </div>
+    </div>
+
+
     <%= f.text_area :target_muscle, class:"items-text", id:"item-name", placeholder:"例 大胸筋（必須）", maxlength:"40" %>
     
       <div class="items-explain">
@@ -48,5 +53,6 @@
       <%# /下部ボタン %>
      </div>
   <% end %>
+  </div>
   <%= render "shared/second-footer"%>
 </div>
