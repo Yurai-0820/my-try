@@ -1,6 +1,6 @@
 class TrainingsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :trainings, only: %i[edit update show destroy]
+  before_action :trainings, only: %i[edit update destroy]
   before_action :move_to_index, only: %i[new edit update destroy]
 
   def index
@@ -20,9 +20,26 @@ class TrainingsController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+  end
 
-  def destroy; end
+  def update
+    if current_user.id == @training.user_id
+      @training.update(training_params)
+      redirect_to trainings_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    unless @training.max.present?
+      @training.destroy
+      redirect_to trainings_path
+    else
+      redirect_to trainings_path
+    end
+  end
 
   private
 

@@ -1,0 +1,58 @@
+<div class="training-index-contents">
+  <%= render "shared/second-header"%>
+  <div class="training-main">
+    <h2 class="training-title">トレーニング情報を入力</h2>
+    <%= form_with model: @training, local: true do |f| %>
+    
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="weight-bold-text">
+          部位の選択
+          <span class="indispensable">必須</span>
+    </div>
+      <%= f.collection_select(:muscle_part_id, MusclePart.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    
+
+    
+    <div class="new-items">
+      <div class="weight-bold-text">
+        トレーニング名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :training_name, class:"items-text", id:"item-name", placeholder:"例 ベンチプレス（必須）", maxlength:"40" %>
+    </div>
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        ターゲットの筋肉名
+        <span class="indispensable">必須</span>
+      </div>
+    </div>
+
+
+    <%= f.text_area :target_muscle, class:"items-text", id:"item-name", placeholder:"例 大胸筋（必須）", maxlength:"40" %>
+    
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          トレーニングの説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :training_description, class:"items-text", id:"item-info", placeholder:"胸を張って肩甲骨を寄せる" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        YoutubeのURL 埋め込みコードのURLをコピーして貼り付け
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :video_url, class:"items-text", id:"item-name", placeholder:"URL（必須）" %>
+      <%# 下部ボタン %>
+        <div class="sell-btn-contents">
+          <%= f.submit "編集する" ,class:"sell-btn" %>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
+      <%# /下部ボタン %>
+     </div>
+  <% end %>
+  </div>
+  <%= render "shared/second-footer"%>
+</div>

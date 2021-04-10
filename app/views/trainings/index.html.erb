@@ -1,7 +1,9 @@
 <div class="training-index-contents">
 <%= render "shared/second-header"%>
+
   <div class="training-main">
     <h1 class='training-index-title'>トレーニング一覧</h1>
+
 
 
 
@@ -15,6 +17,15 @@
           <h3 class='training-name-index'>
             <%= training.training_name %>
           </h3>
+  <% if user_signed_in? && current_user.id == 1 %>
+              <div class="edit-btn">
+          <%= link_to '編集',  edit_training_path(training), method: :get %>
+    </div>
+    <div class="destroy-btn">
+          <%= link_to '削除',  training_path(training.id), method: :delete %>
+    </div>
+
+  <% end %> 
             <% end %>
             <% end %>
       </li>
@@ -32,6 +43,14 @@
           <h3 class='training-name-index'>
             <%= training.training_name %>
           </h3>
+          <% if user_signed_in? && current_user.id == 1 %>
+              <div class="edit-btn">
+          <%= link_to '編集',  edit_training_path(training), method: :get %>
+    </div>
+    <div class="destroy-btn">
+          <%= link_to '削除',  training_path(training.id), method: :delete %>
+    </div>
+  <% end %> 
             <% end %>
             <% end %>
       </li>
@@ -48,6 +67,14 @@
           <h3 class='training-name-index'>
             <%= training.training_name %>
           </h3>
+          <% if user_signed_in? && current_user.id == 1 %>
+             <div class="edit-btn">
+          <%= link_to '編集',  edit_training_path(training), method: :get %>
+    </div>
+    <div class="destroy-btn">
+          <%= link_to '削除',  training_path(training.id), method: :delete %>
+    </div>
+  <% end %> 
             <% end %>
             <% end %>
       </li>
@@ -63,6 +90,14 @@
           <h3 class='training-name-index'>
             <%= training.training_name %>
           </h3>
+          <% if user_signed_in? && current_user.id == 1 %>
+             <div class="edit-btn">
+          <%= link_to '編集',  edit_training_path(training), method: :get %>
+    </div>
+    <div class="destroy-btn">
+          <%= link_to '削除',  training_path(training.id), method: :delete %>
+    </div>
+  <% end %> 
             <% end %>
             <% end %>
       </li>
@@ -78,6 +113,14 @@
           <h3 class='training-name-index'>
             <%= training.training_name %>
           </h3>
+          <% if user_signed_in? && current_user.id == 1 %>
+         <div class="edit-btn">
+          <%= link_to '編集',  edit_training_path(training), method: :get %>
+    </div>
+    <div class="destroy-btn">
+          <%= link_to '削除',  training_path(training.id), method: :delete %>
+    </div>
+  <% end %> 
             <% end %>
             <% end %>
       </li>
@@ -94,6 +137,14 @@
           <h3 class='training-name-index'>
             <%= training.training_name %>
           </h3>
+          <% if user_signed_in? && current_user.id == 1 %>
+              <div class="edit-btn">
+          <%= link_to '編集',  edit_training_path(training), method: :get %>
+    </div>
+    <div class="destroy-btn">
+          <%= link_to '削除',  training_path(training.id), method: :delete %>
+    </div>
+  <% end %> 
             <% end %>
             <% end %>
       </li>
