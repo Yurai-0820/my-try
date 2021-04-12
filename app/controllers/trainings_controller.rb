@@ -3,6 +3,7 @@ class TrainingsController < ApplicationController
   before_action :trainings, only: %i[edit update show destroy]
   before_action :move_to_index, only: %i[new edit update destroy]
 
+
   def index
     @trainings = Training.order('created_at DESC')
     @trainings = Training.all
