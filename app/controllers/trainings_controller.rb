@@ -1,7 +1,8 @@
 class TrainingsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :trainings, only: %i[edit show update destroy]
-  before_action :move_to_index, only: %i[new  edit update destroy]
+  before_action :trainings, only: %i[edit update show destroy]
+  before_action :move_to_index, only: %i[new edit update destroy]
+
 
   def index
     @trainings = Training.order('created_at DESC')
@@ -18,7 +19,8 @@ class TrainingsController < ApplicationController
     redirect_to root_path if @training.save
   end
 
-  def show; end
+  def show
+  end
 
   def edit
   end
