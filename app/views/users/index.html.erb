@@ -113,10 +113,10 @@
   </div>
   <% end %>
   
- <h1 class='training-lists'>本日のトレーニングメニュー</h1>
-<h1 class="training-parts">本日の部位は 「胸」</h1>
 
 <% if user_signed_in? && current_user.id != 1 %>
+ <h1 class='training-lists'>本日のトレーニングメニュー</h1>
+<h1 class="training-parts">本日の部位は 「胸」</h1>
   <% @trainings.each do |training| %>
 
       <% if training.muscle_part_id == 2 %>
@@ -164,13 +164,13 @@
 
 <div class = "set-weight" >
                 <li class="max-set-weight">
-                  メインセット　 <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85 %>kg  　8回
+                  メインセット　 <%= ((limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85).round %>kg  　8回
                 </li> 
                 <li class="max-set-weight">
-                  セカンドセット <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75 %>kg 　10回
+                  セカンドセット <%= ((limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75).round %>kg 　10回
                 </li>
                 <li class="max-set-weight">
-                  サードセット　 <%= (limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65 %>kg 　12回
+                  サードセット　 <%= ((limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65).round %>kg 　12回
                 </li>
                 </div>
                 </div>
