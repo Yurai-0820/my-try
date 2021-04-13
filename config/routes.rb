@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :trainings do
     resources :maxes
   end
+  resources :calendars
 end

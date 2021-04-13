@@ -38,6 +38,7 @@ URL
 - has_many :trainings
 - has_many :maxes
 - has_many :manners
+- has_many :calendar
 
 
 ## trainings テーブル
@@ -45,7 +46,7 @@ URL
 | Column               | Type       | Options                  |
 | -------------------- | ---------- | ------------------------ |
 | muscle_part_id       | integer    | null: false              |
-| training_name        | string     | null: false unique: true |
+| training_name        | string     | null: false              |
 | target_muscle        | string     | null: false              |
 | training_description | text       | null: false              |
 | video_url            | string     | null: false              |
@@ -56,6 +57,8 @@ URL
 
 - belongs_to :user
 - has_one :max
+- has_many :calendar
+
 
 
 
@@ -63,7 +66,6 @@ URL
 
 | Column             | Type       | Options                  |
 | ------------------ | ---------- | ------------------------ |
-| max_weight         | integer    | null: false              |
 | user               | references | foreign_key: true        |
 | training           | references | foreign_key: true        |
 
@@ -72,6 +74,7 @@ URL
 
 - belongs_to :user
 - belongs_to :training
+
 
 
 
@@ -88,3 +91,37 @@ URL
 ### Association
 
 - belongs_to :user
+
+## limits テーブル
+
+| Column             | Type       | Options                  |
+| ------------------ | ---------- | ------------------------ |
+| max_weight         | integer    | null: false              |
+| rep                | integer    | null: false              |
+| max                | references | foreign_key: true        |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :training
+- has_many :calendar
+
+## calendar テーブル
+
+| Column             | Type       | Options                  |
+| ------------------ | ---------- | ------------------------ |
+| muscle_part_id       | integer    | null: false            |
+| training_name        | string     | null: false            |
+| max_weight         | integer    | null: false              |
+| rep                | integer    | null: false              |
+| user               | references | foreign_key: true        |
+| training               | references | foreign_key: true    |
+| limit              | references | foreign_key: true        |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :training
+- belongs_to :limit

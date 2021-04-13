@@ -3,6 +3,7 @@ class Training < ApplicationRecord
   belongs_to :muscle_part
   belongs_to :user
   has_one :max
+  has_many :calendars
 
   with_options presence: true do
     with_options numericality: { other_than: 1 } do

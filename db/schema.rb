@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_053643) do
+ActiveRecord::Schema.define(version: 2021_04_13_134004) do
+
+  create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "max_weight", null: false
+    t.integer "rep", null: false
+    t.integer "muscle_part_id", null: false
+    t.string "training_name", null: false
+    t.bigint "training_id"
+    t.bigint "user_id"
+    t.bigint "limit_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["limit_id"], name: "index_calendars_on_limit_id"
+    t.index ["training_id"], name: "index_calendars_on_training_id"
+    t.index ["user_id"], name: "index_calendars_on_user_id"
+  end
 
   create_table "limits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "max_weight", null: false
@@ -68,6 +83,9 @@ ActiveRecord::Schema.define(version: 2021_03_27_053643) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "calendars", "limits"
+  add_foreign_key "calendars", "trainings"
+  add_foreign_key "calendars", "users"
   add_foreign_key "limits", "maxes"
   add_foreign_key "manners", "users"
   add_foreign_key "maxes", "trainings"
