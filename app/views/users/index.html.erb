@@ -120,8 +120,12 @@
   <% @trainings.each do |training| %>
 
       <% if training.muscle_part_id == 2 %>
+
+    <% if training.max.present? && training.max.user_id == current_user.id %> 
+
   
-    <% if training.max.present? %> 
+    <%# if training.max.find_by(current_user.id).present? %> 
+    <%# if training.max.exists?(current_user.id)%> 
 
       <meta charset="UTF-8">
       <script src="/js/training.js" defer></script>
@@ -181,7 +185,7 @@
           <% end %>
 
           <% @maxes.each do |max| %>
-            <% if max.training.id == training.id %>
+             <% if max.training.id == training.id && max.user.id == current_user.id %>
               <% @limit.max_id = max.id %>
              <div class='today-main-sets'>
               <%= link_to edit_limit_path(max.id) do %>
