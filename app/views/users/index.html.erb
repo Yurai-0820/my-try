@@ -89,6 +89,7 @@
     </div>
 
   <% elsif user_signed_in? && current_user.id != 1 %>
+   <div class="user-nickname-title"><%= link_to 'カレンダー', memos_path(@user), class: "user-nickname" %></div>
   <div class='feature-training-contents'>
     <h2 class='training-index-title'>
       まずは「ジムの心得・マナー集」を読んでみよう！
