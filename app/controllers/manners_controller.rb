@@ -5,6 +5,7 @@ class MannersController < ApplicationController
 
   def index
     @manners = Manner.order('created_at DESC')
+    
   end
 
   def new

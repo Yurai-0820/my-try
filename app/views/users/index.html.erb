@@ -196,6 +196,7 @@
               </div>
               </div>
               <% end %>
+           
             <% end %>
           <% end %>
       <% else %> 
@@ -219,9 +220,13 @@
           <div class='today-main-set'>
             <%= "重量と回数を登録する" %>
           </div>
-             
             <% end %>
         </div>
+           <%= link_to limits_path do %>
+                  <div class='today-main-set'>
+                  <%= "本日行うトレーニングを確認しよう" %>
+                  </div>
+              <% end %>
      
          <% end %>  
       <% end %>
