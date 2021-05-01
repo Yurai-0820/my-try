@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_053643) do
+ActiveRecord::Schema.define(version: 2021_04_24_215301) do
 
   create_table "limits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "max_weight", null: false
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_03_27_053643) do
     t.bigint "max_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "training_id"
     t.index ["max_id"], name: "index_limits_on_max_id"
   end
 

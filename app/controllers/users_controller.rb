@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @max = Max.new
     @limits = Limit.all
     @limit = Limit.new
+    
   end
 
   def new

@@ -11,6 +11,20 @@ class LimitsController < ApplicationController
     @limit = Limit.find(params[:id])
   end
 
+  def new
+    @limit = limit.new
+  end
+
+  def create
+    @limit = limit.new(limit_params)
+    if @limit.valid?
+      @limit.save
+      redirect_to root_path
+    else
+      render 'users/index'
+    end
+  end
+
   def update
     @limit = Limit.find(params[:id])
     if @limit.update(limit_params)
