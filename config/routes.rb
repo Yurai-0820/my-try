@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :manners
   resources :limits
+  resources :memos
   resources :trainings do
     resources :maxes
   end

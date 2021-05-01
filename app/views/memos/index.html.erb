@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+
+<div class="container-fluid">
+	<h2 class="section-top"><span class="fas fa-dumbbell" aria-hidden="true"></span> トレーニングの記録</h2>
+	<div class="col-md-3 col-sm-12 col-xs-12">
+   <%= form_for (@memo) do |f| %>
+     <div class="field row">
+       <label for="menu">トレーニング名</label>
+       <p><%= f.text_area :menu%></p>
+       <label for="weight">重量(kg)</label>
+       <p><%= f.select :weight, [*(0..200)]%></p>
+       <label for="rep">回数</label>
+       <p><%= f.select :rep, [*(1..100)]%></p>
+       <label for="set">セット数</label>
+       <p><%= f.select :set, [*(1..30)]%></p>
+       <label for="start_time">トレーニング日</label>
+       <p><%= f.datetime_select :start_time%></p>
+     </div>
+     <div class="actions row">
+       <%= f.submit class: "btn btn-sm btn-hachiss" %>
+     </div>
+   <% end %>
+ 	</div>
+ 	<div class="col-md-9 col-sm-12 col-xs-12">
+		<%= month_calendar events: @memos do |date, memos| %>
+		  <%= date.day %>
+		  <% memos.each do |memo| %>
+		    <div>
+		      <%= link_to memo.menu, edit_memo_path(memo) %>
+		    </div>
+		  <% end %>
+		<% end %>
+	
+  		<%= paginate @memos %>
+ 	</div>
+</div>
+
+<%= render "shared/second-footer" %>
