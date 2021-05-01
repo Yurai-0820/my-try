@@ -6,6 +6,8 @@ class MaxesController < ApplicationController
     @max = AddMax.new
     @trainings = Training.all
     @maxes = Max.all
+    @limits = Limit.all
+    @limit = Limit.new
   end
 
   def new
@@ -16,7 +18,7 @@ class MaxesController < ApplicationController
     @max = AddMax.new(max_params)
     if @max.valid?
       @max.save
-      redirect_to root_path
+      redirect_to limits_path
     else
       render 'index'
     end

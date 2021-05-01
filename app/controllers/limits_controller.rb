@@ -1,6 +1,10 @@
 class LimitsController < ApplicationController
-  before_action :limits, only: %i[edit update]
+  before_action :limits, only: %i[ edit update]
 
+ def index
+  @limits = Limit.all
+  @maxes = Max.all
+ end
   def create; end
 
   def edit
@@ -23,6 +27,6 @@ class LimitsController < ApplicationController
   end
 
   def limit_params
-    params.require(:limit).permit(:max_weight, :rep)
+    params.require(:limit).permit(:max_weight, :rep, :max_id)
   end
 end

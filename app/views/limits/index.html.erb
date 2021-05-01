@@ -1,0 +1,50 @@
+<% @limits.each do |limit| %>
+    <% if user_signed_in? %>
+        <% if limit.id == current_user.id %>
+              <div class="max-weight-contents">
+              <ul class="max-weight-wrap">
+              <li class="max-set-weight-1">
+                  <span class = "max-weight" >今のMAX重量は</span>
+                  <% if limit.rep > 1 %>
+                  <%= (limit.max_weight * limit.rep / 40 + limit.max_weight)  %>kg
+                  <% else %>
+                  <%= limit.max_weight %>kg
+                  <% end %>
+              </li>
+            <div class = "set-menus" >
+            <div class = "set-menu" >
+                <div class="max-weight">
+                  セットメニュー
+                </div>
+                </div>
+
+              <div class = "set-weight" >
+                <li class="max-set-weight">
+                  メインセット　 <%= ((limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.85).round %>kg  　8回
+                </li> 
+                <li class="max-set-weight">
+                  セカンドセット <%= ((limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.75).round %>kg 　10回
+                </li>
+                <li class="max-set-weight">
+                  サードセット　 <%= ((limit.max_weight * limit.rep / 40 + limit.max_weight) * 0.65).round %>kg 　12回
+                </li>
+                </div>
+                </div>
+
+                </ul>
+                </div>
+            
+              <%= link_to edit_limit_path(limit.id) do %>
+                  <div class='today-main-set'>
+                  <%= "今日のメインセットを登録する" %>
+                  </div>
+
+              <% end %>
+              <%= link_to users_path do %>
+                  <div class='today-main-set'>
+                    <%= "戻る" %>
+                  </div>
+              <% end %>
+            <% end %>
+            <% end %>
+            <% end %>
