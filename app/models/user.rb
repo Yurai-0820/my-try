@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :trainings
   has_many :maxes
   has_many :manners
+  has_many :memos
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
