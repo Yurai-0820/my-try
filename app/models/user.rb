@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :maxes
   has_many :manners
   has_many :memos
+  has_many :limits
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -19,4 +20,9 @@ class User < ApplicationRecord
       validates :day_training_time_id
     end
   end
+
+  # def user
+  #   #インスタンスメソッドないで、selfはインスタンス自身を表す
+  #   return User.find_by(id: self.user_id)
+  # end
 end
