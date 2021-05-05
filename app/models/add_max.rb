@@ -12,6 +12,6 @@ class AddMax
   def save
     max = Max.create(user_id: user_id, training_id: training_id)
 
-    Limit.create(max_weight: max_weight, rep: rep, max_id: max.id)
+    Limit.create(max_weight: max_weight, rep: rep, max_id: max.id, user_id: user_id)
   end
 end
