@@ -11,6 +11,9 @@ class LimitsController < ApplicationController
     @user = current_user.id
     #@limit = Limit.new
     #@max = AddMax.new
+    @memo = Memo.new
+ 	 @customer = current_user
+ @memos = Memo.where(user_id: current_user).order(start_time: "desc").page(params[:page]).per(8)
   end
 
   def new
@@ -50,4 +53,5 @@ end
   def limit_params
     params.require(:limit).permit(:max_weight, :rep).merge(max_id: max_id, user_id: current_user.id)
   end
+
 end
