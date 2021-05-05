@@ -18,7 +18,7 @@ class MaxesController < ApplicationController
     @max = AddMax.new(max_params)
     if @max.valid?
       @max.save
-      redirect_to limits_path
+      redirect_to users_path
     else
       render 'index'
     end

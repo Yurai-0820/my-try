@@ -17,15 +17,6 @@ class LimitsController < ApplicationController
  @memos = Memo.where(user_id: current_user).order(start_time: "desc").page(params[:page]).per(8)
   end
 
-  def new
-    
-  end
-
-  def create
-    @limit = Limit.new(
-      limit_params
-    )
-  end
 
 
   def edit
