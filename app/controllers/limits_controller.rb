@@ -1,4 +1,5 @@
 class LimitsController < ApplicationController
+
   before_action :authenticate_user!
   before_action :set_current_user
   # before_action :limits, only: %i[ edit update]
@@ -26,8 +27,23 @@ class LimitsController < ApplicationController
     )
   end
 
+
   def edit
     @limit = Limit.find(params[:id])
+  end
+
+  def new
+    @limit = limit.new
+  end
+
+  def create
+    @limit = limit.new(limit_params)
+    if @limit.valid?
+      @limit.save
+      redirect_to root_path
+    else
+      render 'users/index'
+    end
   end
 
   def update
@@ -52,6 +68,7 @@ end
 
   def limit_params
     params.require(:limit).permit(:max_weight, :rep).merge(max_id: max_id, user_id: current_user.id)
+
   end
 
 end
